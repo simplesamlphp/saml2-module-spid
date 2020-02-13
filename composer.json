@@ -1,0 +1,38 @@
+{
+    "name": "simplesamlphp/saml2-module-spid",
+    "description": "SPID support for the SAML2 PHP library",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Tim van Dijen",
+            "email": "tvdijen@gmail.com"
+        },
+        {
+            "name": "Jaime Perez",
+            "email": "jaime.perez@uninett.no"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "webmozart/assert": "^1.6"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.2",
+        "phpunit/phpunit": "^8.5",
+        "simplesamlphp/saml2": "dev-master",
+        "sensiolabs/security-checker": "~6.0",
+        "sebastian/phpcpd": "~4.1",
+        "squizlabs/php_codesniffer": "~3.5",
+        "vimeo/psalm": "~3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "SPID\\": "src/SPID"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SPID\\": "tests/SPID/"
+        }
+    }
+}
