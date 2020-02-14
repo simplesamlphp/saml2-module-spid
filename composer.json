@@ -14,7 +14,8 @@
     ],
     "require": {
         "php": ">=7.2",
-        "webmozart/assert": "^1.6"
+        "webmozart/assert": "^1.6",
+        "simplesamlphp/saml2": "dev-rewrite-api-saml"
     },
     "require-dev": {
         "mockery/mockery": "~1.2",
