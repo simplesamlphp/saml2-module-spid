@@ -20,7 +20,7 @@
     "require-dev": {
         "mockery/mockery": "~1.2",
         "phpunit/phpunit": "^8.5",
-        "simplesamlphp/simplesamlphp-test-framework": "~0.2.8",
+        "simplesamlphp/simplesamlphp-test-framework": "~0.2.7",
         "sensiolabs/security-checker": "~6.0",
         "sebastian/phpcpd": "~4.1",
         "squizlabs/php_codesniffer": "~3.5",
