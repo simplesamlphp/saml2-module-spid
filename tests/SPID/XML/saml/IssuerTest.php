@@ -8,14 +8,14 @@ use PHPUnit\Framework\TestCase;
 use SimpleSAML\SAML2\Constants;
 use SimpleSAML\SAML2\Exception\InvalidArgumentException;
 use SimpleSAML\XML\DOMDocumentFactory;
+use SimpleSAML\Test\XML\SerializableXMLTestTrait;;
 
 /**
  * Class \SAML2\XML\saml\IssuerTest
  */
 class IssuerTest extends TestCase
 {
-    /** @var \DOMDocument $document */
-    private $document;
+    use SerializableXMLTestTrait;
 
 
     /**
@@ -23,9 +23,12 @@ class IssuerTest extends TestCase
      */
     public function setup(): void
     {
+        $this->testedClass = Issuer::class;
+
+
         $samlNamespace = Issuer::NS;
         $nameidEntity = Constants::NAMEID_ENTITY;
-        $this->document = DOMDocumentFactory::fromString(<<<XML
+        $this->xmlRepresentation = DOMDocumentFactory::fromString(<<<XML
 <saml:Issuer
   xmlns:saml="{$samlNamespace}"
   NameQualifier="TheNameQualifier"
@@ -52,7 +55,7 @@ XML
         $this->assertNull($issuer->getSPProvidedID());
 
         $this->assertEquals(
-            $this->document->saveXML($this->document->documentElement),
+            $this->xmlRepresentation->saveXML($this->xmlRepresentation->documentElement),
             strval($issuer)
         );
     }
@@ -63,7 +66,7 @@ XML
      */
     public function testUnmarshalling(): void
     {
-        $issuer = Issuer::fromXML($this->document->documentElement);
+        $issuer = Issuer::fromXML($this->xmlRepresentation->documentElement);
 
         $this->assertEquals('TheIssuerValue', $issuer->getContent());
         $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
@@ -78,7 +81,7 @@ XML
      */
     public function testUnmarshallingInvalidAttr(): void
     {
-        $element = $this->document->documentElement;
+        $element = $this->xmlRepresentation->documentElement;
         $element->setAttribute('SPProvidedID', 'TheSPProvidedID');
         $element->setAttribute('SPNameQualifier', 'TheSPNameQualifier');
 
@@ -89,17 +92,5 @@ XML
         $this->assertNull($issuer->getSPNameQualifier());
         $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
         $this->assertNull($issuer->getSPProvidedID());
-    }
-
-
-    /**
-     * Test serialization / unserialization
-     */
-    public function testSerialization(): void
-    {
-        $this->assertEquals(
-            $this->document->saveXML($this->document->documentElement),
-            strval(unserialize(serialize(Issuer::fromXML($this->document->documentElement))))
-        );
     }
 }
