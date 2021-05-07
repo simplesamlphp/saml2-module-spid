@@ -8,6 +8,8 @@ use DOMElement;
 use SimpleSAML\Assert\Assert;
 use SimpleSAML\SAML2\Constants;
 use SimpleSAML\SAML2\XML\saml\NameIDType;
+use SimpleSAML\XML\Exception\InvalidDOMElementException;
+use SPID\Exception\ProtocolViolationException;
 
 /**
  * Class representing the saml:Issuer element compliant with SPID spefication.
@@ -41,9 +43,9 @@ final class Issuer extends NameIDType
      */
     public static function fromXML(DOMElement $xml): object
     {
-        Assert::same($xml->localName, 'Issuer');
-        Assert::same($xml->namespaceURI, Issuer::NS);
-        Assert::same(self::getAttribute($xml, 'Format'), Constants::NAMEID_ENTITY);
+        Assert::same($xml->localName, 'Issuer', InvalidDOMElementException::class);
+        Assert::same($xml->namespaceURI, Issuer::NS, InvalidDOMElementException::class);
+        Assert::same(self::getAttribute($xml, 'Format'), Constants::NAMEID_ENTITY, ProtocolViolationException::class);
 
         return new self($xml->textContent, self::getAttribute($xml, 'NameQualifier'));
     }
