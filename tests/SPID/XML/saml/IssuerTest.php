@@ -25,15 +25,8 @@ class IssuerTest extends TestCase
     {
         $this->testedClass = Issuer::class;
 
-
-        $samlNamespace = Issuer::NS;
-        $nameidEntity = Constants::NAMEID_ENTITY;
-        $this->xmlRepresentation = DOMDocumentFactory::fromString(<<<XML
-<saml:Issuer
-  xmlns:saml="{$samlNamespace}"
-  NameQualifier="TheNameQualifier"
-  Format="{$nameidEntity}">TheIssuerValue</saml:Issuer>
-XML
+        $this->xmlRepresentation = DOMDocumentFactory::fromFile(
+            dirname(dirname(dirname(dirname(__FILE__)))) . '/resources/xml/saml_Issuer.xml'
         );
     }
 
