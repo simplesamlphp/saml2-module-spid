@@ -14,7 +14,6 @@ use SPID\Exception\ProtocolViolationException;
 /**
  * Class representing the saml:Issuer element compliant with SPID spefication.
  *
- * @author Tim van Dijen, <tvdijen@gmail.com>
  * @package simplesamlphp/saml2
  */
 final class Issuer extends NameIDType
