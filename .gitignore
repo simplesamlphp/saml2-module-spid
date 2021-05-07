@@ -1,5 +1,6 @@
-.phpunit.result.cache
-composer.lock
-composer.phar
-/build
+/build/
+/cache.properties
+/composer.lock
+/composer.phar
+/.phpunit.result.cache
 /vendor/
