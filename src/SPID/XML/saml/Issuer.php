@@ -14,7 +14,7 @@ use SPID\Exception\ProtocolViolationException;
 /**
  * Class representing the saml:Issuer element compliant with SPID spefication.
  *
- * @package simplesamlphp/saml2
+ * @package simplesamlphp/saml2-module-spid
  */
 final class Issuer extends NameIDType
 {
@@ -37,8 +37,9 @@ final class Issuer extends NameIDType
      *
      * @param \DOMElement $xml The XML element we should load
      *
-     * @return \SAML2\XML\saml\Issuer
-     * @throws \InvalidArgumentException
+     * @return \SPID\XML\saml\Issuer
+     * @throws \SimpleSAML\XML\Exception\InvalidDOMElementException
+     * @throws \SPID\Exception\ProtocolViolationException
      */
     public static function fromXML(DOMElement $xml): object
     {
