@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace SPID\XML\saml;
 
 use DOMElement;
-use SAML2\Constants;
-use SAML2\XML\saml\NameIDType;
-use Webmozart\Assert\Assert;
+use SimpleSAML\Assert\Assert;
+use SimpleSAML\SAML2\Constants;
+use SimpleSAML\SAML2\XML\saml\NameIDType;
 
 /**
  * Class representing the saml:Issuer element compliant with SPID spefication.

@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace SPID\XML\saml;
 
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use SAML2\Constants;
-use SAML2\DOMDocumentFactory;
-use SAML2\Utils;
+use SimpleSAML\SAML2\Constants;
+use SimpleSAML\SAML2\Exception\InvalidArgumentException;
+use SimpleSAML\XML\DOMDocumentFactory;
 
 /**
  * Class \SAML2\XML\saml\IssuerTest
