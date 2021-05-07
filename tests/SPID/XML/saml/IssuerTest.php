@@ -45,7 +45,7 @@ XML
             'TheNameQualifier'
         );
 
-        $this->assertEquals('TheIssuerValue', $issuer->getValue());
+        $this->assertEquals('TheIssuerValue', $issuer->getContent());
         $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
         $this->assertNull($issuer->getSPNameQualifier());
         $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
@@ -65,7 +65,7 @@ XML
     {
         $issuer = Issuer::fromXML($this->document->documentElement);
 
-        $this->assertEquals('TheIssuerValue', $issuer->getValue());
+        $this->assertEquals('TheIssuerValue', $issuer->getContent());
         $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
         $this->assertNull($issuer->getSPNameQualifier());
         $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
@@ -84,7 +84,7 @@ XML
 
         $issuer = Issuer::fromXML($element);
 
-        $this->assertEquals('TheIssuerValue', $issuer->getValue());
+        $this->assertEquals('TheIssuerValue', $issuer->getContent());
         $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
         $this->assertNull($issuer->getSPNameQualifier());
         $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
