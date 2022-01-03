@@ -30,5 +30,10 @@
         "psr-4": {
             "SPID\\": "tests/SPID/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        }
     }
 }
