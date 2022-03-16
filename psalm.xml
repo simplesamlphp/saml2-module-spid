@@ -2,7 +2,8 @@
 <psalm
   name="SAML2 SPID module"
   useDocblockTypes="true"
-  totallyTyped="false"
+  errorLevel="2"
+  reportMixedIssues="false"
   hideExternalErrors="true"
 >
   <projectFiles>
