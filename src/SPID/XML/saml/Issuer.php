@@ -12,7 +12,7 @@ use SimpleSAML\XML\Exception\InvalidDOMElementException;
 use SPID\Exception\ProtocolViolationException;
 
 /**
- * Class representing the saml:Issuer element compliant with SPID spefication.
+ * Class representing the saml:Issuer element compliant with SPID specification.
  *
  * @package simplesamlphp/saml2-module-spid
  */
