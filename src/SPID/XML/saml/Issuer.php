@@ -41,12 +41,12 @@ final class Issuer extends NameIDType
      * @throws \SimpleSAML\XML\Exception\InvalidDOMElementException
      * @throws \SPID\Exception\ProtocolViolationException
      */
-    public static function fromXML(DOMElement $xml): object
+    public static function fromXML(DOMElement $xml): static
     {
         Assert::same($xml->localName, 'Issuer', InvalidDOMElementException::class);
         Assert::same($xml->namespaceURI, Issuer::NS, InvalidDOMElementException::class);
         Assert::same(self::getAttribute($xml, 'Format'), Constants::NAMEID_ENTITY, ProtocolViolationException::class);
 
-        return new self($xml->textContent, self::getAttribute($xml, 'NameQualifier'));
+        return new static($xml->textContent, self::getAttribute($xml, 'NameQualifier'));
     }
 }
