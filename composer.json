@@ -19,7 +19,7 @@
     "require-dev": {
         "mockery/mockery": "~1.4",
         "phpunit/phpunit": "^9.5",
-        "simplesamlphp/simplesamlphp-test-framework": "~1.0.5"
+        "simplesamlphp/simplesamlphp-test-framework": "~1.2.1"
     },
     "autoload": {
         "psr-4": {
