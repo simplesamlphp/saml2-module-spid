@@ -8,14 +8,14 @@ use PHPUnit\Framework\TestCase;
 use SimpleSAML\SAML2\Constants;
 use SimpleSAML\SAML2\Exception\InvalidArgumentException;
 use SimpleSAML\XML\DOMDocumentFactory;
-use SimpleSAML\Test\XML\SerializableXMLTestTrait;;
+use SimpleSAML\Test\XML\SerializableElementTestTrait;;
 
 /**
  * Class \SAML2\XML\saml\IssuerTest
  */
 class IssuerTest extends TestCase
 {
-    use SerializableXMLTestTrait;
+    use SerializableElementTestTrait;
 
 
     /**
