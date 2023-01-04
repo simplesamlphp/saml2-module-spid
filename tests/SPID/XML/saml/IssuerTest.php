@@ -10,6 +10,9 @@ use SimpleSAML\SAML2\Exception\InvalidArgumentException;
 use SimpleSAML\XML\DOMDocumentFactory;
 use SimpleSAML\Test\XML\SerializableElementTestTrait;;
 
+use function dirname;
+use function strval;
+
 /**
  * Class \SAML2\XML\saml\IssuerTest
  */
@@ -26,7 +29,7 @@ class IssuerTest extends TestCase
         $this->testedClass = Issuer::class;
 
         $this->xmlRepresentation = DOMDocumentFactory::fromFile(
-            dirname(dirname(dirname(dirname(__FILE__)))) . '/resources/xml/saml_Issuer.xml'
+            dirname(__FILE__, 4) . '/resources/xml/saml_Issuer.xml'
         );
     }
 
