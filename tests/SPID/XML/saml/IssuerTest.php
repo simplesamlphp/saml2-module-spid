@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use SimpleSAML\SAML2\Constants;
 use SimpleSAML\SAML2\Exception\InvalidArgumentException;
 use SimpleSAML\XML\DOMDocumentFactory;
-use SimpleSAML\Test\XML\SerializableElementTestTrait;;
+use SimpleSAML\XML\TestUtils\SerializableElementTestTrait;
 
 use function dirname;
 use function strval;
@@ -29,7 +29,7 @@ class IssuerTest extends TestCase
         $this->testedClass = Issuer::class;
 
         $this->xmlRepresentation = DOMDocumentFactory::fromFile(
-            dirname(__FILE__, 4) . '/resources/xml/saml_Issuer.xml'
+            dirname(__FILE__, 5) . '/resources/xml/saml_Issuer.xml'
         );
     }
 

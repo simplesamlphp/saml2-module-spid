@@ -6,7 +6,7 @@ namespace SPID\XML\saml;
 
 use DOMElement;
 use SimpleSAML\Assert\Assert;
-use SimpleSAML\SAML2\Constants;
+use SimpleSAML\SAML2\Constants as C;
 use SimpleSAML\SAML2\XML\saml\NameIDType;
 use SimpleSAML\XML\Exception\InvalidDOMElementException;
 use SPID\Exception\ProtocolViolationException;
@@ -28,7 +28,7 @@ final class Issuer extends NameIDType
         string $value,
         string $NameQualifier
     ) {
-        parent::__construct($value, $NameQualifier, null, Constants::NAMEID_ENTITY);
+        parent::__construct($value, $NameQualifier, null, C::NAMEID_ENTITY);
     }
 
 
@@ -45,8 +45,13 @@ final class Issuer extends NameIDType
     {
         Assert::same($xml->localName, 'Issuer', InvalidDOMElementException::class);
         Assert::same($xml->namespaceURI, Issuer::NS, InvalidDOMElementException::class);
-        Assert::same(self::getAttribute($xml, 'Format'), Constants::NAMEID_ENTITY, ProtocolViolationException::class);
 
-        return new static($xml->textContent, self::getAttribute($xml, 'NameQualifier'));
+        /** @psalm-var string $format */
+        $format = self::getAttribute($xml, 'Format');
+        Assert::same($format, C::NAMEID_ENTITY, ProtocolViolationException::class);
+
+        /** @psalm-var string $nameQualifier */
+        $nameQualifier = self::getAttribute($xml, 'NameQualifier');
+        return new static($xml->textContent, $nameQualifier);
     }
 }

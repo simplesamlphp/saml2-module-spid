@@ -14,4 +14,3 @@ use InvalidArgumentException;
 class ProtocolViolationException extends InvalidArgumentException
 {
 }
-
