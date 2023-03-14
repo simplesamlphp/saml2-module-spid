@@ -14,8 +14,11 @@
     ],
     "require": {
         "php": "^8.0",
+        "ext-dom": "*",
 
-        "simplesamlphp/saml2": "^5.0.0-alpha.1"
+        "simplesamlphp/assert": "^1.0.3",
+        "simplesamlphp/saml2": "^5.0.0-alpha.1",
+        "simplesamlphp/xml-common": "^1.7.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.5",
