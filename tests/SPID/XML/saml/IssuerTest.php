@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace SPID\XML\saml;
+namespace SimpleSAML\Test\SPID\XML\saml;
 
 use PHPUnit\Framework\TestCase;
 use SimpleSAML\SAML2\Constants;
 use SimpleSAML\SAML2\Exception\InvalidArgumentException;
+use SimpleSAML\SPID\XML\saml\Issuer;
 use SimpleSAML\XML\DOMDocumentFactory;
 use SimpleSAML\XML\TestUtils\SerializableElementTestTrait;
 
@@ -14,7 +15,8 @@ use function dirname;
 use function strval;
 
 /**
- * Class \SAML2\XML\saml\IssuerTest
+ * Class \SimpleSAML\SPID\XML\saml\IssuerTest
+ * @covers \SimpleSAML\SPID\XML\saml\Issuer
  */
 class IssuerTest extends TestCase
 {

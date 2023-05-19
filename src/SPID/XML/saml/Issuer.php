@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SPID\XML\saml;
+namespace SimpleSAML\SPID\XML\saml;
 
 use DOMElement;
 use SimpleSAML\Assert\Assert;
@@ -37,20 +37,18 @@ final class Issuer extends NameIDType
      *
      * @param \DOMElement $xml The XML element we should load
      *
-     * @return \SPID\XML\saml\Issuer
+     * @return static
      * @throws \SimpleSAML\XML\Exception\InvalidDOMElementException
-     * @throws \SPID\Exception\ProtocolViolationException
+     * @throws \SimpleSAML\SPID\Exception\ProtocolViolationException
      */
     public static function fromXML(DOMElement $xml): static
     {
         Assert::same($xml->localName, 'Issuer', InvalidDOMElementException::class);
         Assert::same($xml->namespaceURI, Issuer::NS, InvalidDOMElementException::class);
 
-        /** @psalm-var string $format */
         $format = self::getAttribute($xml, 'Format');
         Assert::same($format, C::NAMEID_ENTITY, ProtocolViolationException::class);
 
-        /** @psalm-var string $nameQualifier */
         $nameQualifier = self::getAttribute($xml, 'NameQualifier');
         return new static($xml->textContent, $nameQualifier);
     }

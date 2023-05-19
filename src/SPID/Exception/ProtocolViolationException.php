@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SPID\Exception;
+namespace SimpleSAML\SPID\Exception;
 
 use InvalidArgumentException;
 

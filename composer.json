@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SPID\\": "src/SPID"
+            "SimpleSAML\\SPID\\": "src/SPID"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SPID\\": "tests/SPID/"
+            "SimpleSAML\\SPID\\": "tests/SPID/"
         }
     },
     "config": {
