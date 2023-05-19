@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"SPID\\XML\\saml\\IssuerTest::testMarshalling":0.008,"SPID\\XML\\saml\\IssuerTest::testUnmarshalling":0.001,"SPID\\XML\\saml\\IssuerTest::testUnmarshallingInvalidAttr":0,"SPID\\XML\\saml\\IssuerTest::testSerialization":0.001}}
