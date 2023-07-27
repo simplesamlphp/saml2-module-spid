@@ -31,7 +31,7 @@ class IssuerTest extends TestCase
         self::$testedClass = Issuer::class;
 
         self::$xmlRepresentation = DOMDocumentFactory::fromFile(
-            dirname(__FILE__, 5) . '/resources/xml/saml_Issuer.xml'
+            dirname(__FILE__, 4) . '/resources/xml/saml_Issuer.xml'
         );
     }
 
