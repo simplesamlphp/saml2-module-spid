@@ -26,11 +26,11 @@ class IssuerTest extends TestCase
     /**
      * @return void
      */
-    public function setup(): void
+    public static function setupBeforeClass(): void
     {
-        $this->testedClass = Issuer::class;
+        self::$testedClass = Issuer::class;
 
-        $this->xmlRepresentation = DOMDocumentFactory::fromFile(
+        self::$xmlRepresentation = DOMDocumentFactory::fromFile(
             dirname(__FILE__, 5) . '/resources/xml/saml_Issuer.xml'
         );
     }
@@ -53,7 +53,7 @@ class IssuerTest extends TestCase
         $this->assertNull($issuer->getSPProvidedID());
 
         $this->assertEquals(
-            $this->xmlRepresentation->saveXML($this->xmlRepresentation->documentElement),
+            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
             strval($issuer)
         );
     }
@@ -64,7 +64,7 @@ class IssuerTest extends TestCase
      */
     public function testUnmarshalling(): void
     {
-        $issuer = Issuer::fromXML($this->xmlRepresentation->documentElement);
+        $issuer = Issuer::fromXML(self::$xmlRepresentation->documentElement);
 
         $this->assertEquals('TheIssuerValue', $issuer->getContent());
         $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
@@ -79,7 +79,7 @@ class IssuerTest extends TestCase
      */
     public function testUnmarshallingInvalidAttr(): void
     {
-        $element = $this->xmlRepresentation->documentElement;
+        $element = clone self::$xmlRepresentation->documentElement;
         $element->setAttribute('SPProvidedID', 'TheSPProvidedID');
         $element->setAttribute('SPNameQualifier', 'TheSPNameQualifier');
 
