@@ -48,7 +48,7 @@ jobs:
           php-version: '8.2'
           tools: composer, composer-require-checker, composer-unused, phpcs, psalm
           # optional performance gain for psalm: opcache
-          extensions: ctype, date, dom, filter, hash, mbstring, opcache, openssl, pcre, spl, xml
+          extensions: ctype, date, dom, filter, hash, mbstring, opcache, openssl, pcre, soap, spl, xml
 
       - name: Setup problem matchers for PHP
         run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
@@ -112,7 +112,7 @@ jobs:
         with:
           # Should be the lowest supported version
           php-version: '8.0'
-          extensions: ctype, date, dom, filter, hash, mbstring, openssl, pcre, spl, xml
+          extensions: ctype, date, dom, filter, hash, mbstring, openssl, pcre, soap, spl, xml
           tools: composer
           coverage: none
 
@@ -159,7 +159,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: ctype, date, dom, filter, hash, mbstring, openssl, pcre, spl, xml
+          extensions: ctype, date, dom, filter, hash, mbstring, openssl, pcre, soap, spl, xml
           tools: composer
           ini-values: error_reporting=E_ALL
           coverage: pcov
@@ -221,7 +221,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: ctype, date, dom, filter, hash, mbstring, openssl, pcre, spl, xml
+          extensions: ctype, date, dom, filter, hash, mbstring, openssl, pcre, soap, spl, xml
           tools: composer
           ini-values: error_reporting=E_ALL
           coverage: none
