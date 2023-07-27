@@ -8,8 +8,8 @@ use DOMElement;
 use SimpleSAML\Assert\Assert;
 use SimpleSAML\SAML2\Constants as C;
 use SimpleSAML\SAML2\XML\saml\NameIDType;
+use SimpleSAML\SPID\Exception\ProtocolViolationException;
 use SimpleSAML\XML\Exception\InvalidDOMElementException;
-use SPID\Exception\ProtocolViolationException;
 
 /**
  * Class representing the saml:Issuer element compliant with SPID specification.
