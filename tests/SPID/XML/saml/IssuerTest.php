@@ -6,7 +6,6 @@ namespace SimpleSAML\Test\SPID\XML\saml;
 
 use PHPUnit\Framework\TestCase;
 use SimpleSAML\SAML2\Constants;
-use SimpleSAML\SAML2\Exception\InvalidArgumentException;
 use SimpleSAML\SPID\XML\saml\Issuer;
 use SimpleSAML\XML\DOMDocumentFactory;
 use SimpleSAML\XML\TestUtils\SerializableElementTestTrait;
