@@ -50,6 +50,6 @@ final class Issuer extends NameIDType
         Assert::same($format, C::NAMEID_ENTITY, ProtocolViolationException::class);
 
         $nameQualifier = self::getAttribute($xml, 'NameQualifier');
-        return new static($xml->textContent, $nameQualifier, null, C::NAMEID_ENTITY, null);
+        return new static($xml->textContent, $nameQualifier);
     }
 }
