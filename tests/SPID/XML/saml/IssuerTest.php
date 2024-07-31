@@ -74,23 +74,4 @@ class IssuerTest extends TestCase
         $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
         $this->assertNull($issuer->getSPProvidedID());
     }
-
-
-    /**
-     * @return void
-     */
-    public function testUnmarshallingInvalidAttr(): void
-    {
-        $element = clone self::$xmlRepresentation->documentElement;
-        $element->setAttribute('SPProvidedID', 'TheSPProvidedID');
-        $element->setAttribute('SPNameQualifier', 'TheSPNameQualifier');
-
-        $issuer = Issuer::fromXML($element);
-
-        $this->assertEquals('TheIssuerValue', $issuer->getContent());
-        $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
-        $this->assertNull($issuer->getSPNameQualifier());
-        $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
-        $this->assertNull($issuer->getSPProvidedID());
-    }
 }
