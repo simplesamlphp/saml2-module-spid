@@ -33,7 +33,7 @@ class IssuerTest extends TestCase
         self::$testedClass = Issuer::class;
 
         self::$xmlRepresentation = DOMDocumentFactory::fromFile(
-            dirname(__FILE__, 4) . '/resources/xml/saml_Issuer.xml'
+            dirname(__FILE__, 4) . '/resources/xml/saml_Issuer.xml',
         );
     }
 
@@ -45,7 +45,7 @@ class IssuerTest extends TestCase
     {
         $issuer = new Issuer(
             'TheIssuerValue',
-            'TheNameQualifier'
+            'TheNameQualifier',
         );
 
         $this->assertEquals('TheIssuerValue', $issuer->getContent());
@@ -56,7 +56,7 @@ class IssuerTest extends TestCase
 
         $this->assertEquals(
             self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($issuer)
+            strval($issuer),
         );
     }
 

@@ -26,7 +26,7 @@ final class Issuer extends NameIDType
      */
     public function __construct(
         string $value,
-        string $NameQualifier
+        string $NameQualifier,
     ) {
         parent::__construct($value, $NameQualifier, null, C::NAMEID_ENTITY);
     }
