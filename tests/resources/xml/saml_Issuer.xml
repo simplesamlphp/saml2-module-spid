@@ -1,1 +1,1 @@
-<saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" NameQualifier="TheNameQualifier" Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">TheIssuerValue</saml:Issuer>
+<saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" NameQualifier="urn:x-simplesamlphp:namequalifier" Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">urn:x-simplesamlphp:issuer</saml:Issuer>

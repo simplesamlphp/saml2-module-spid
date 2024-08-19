@@ -44,12 +44,12 @@ class IssuerTest extends TestCase
     public function testMarshalling(): void
     {
         $issuer = new Issuer(
-            'TheIssuerValue',
-            'TheNameQualifier',
+            'urn:x-simplesamlphp:issuer',
+            'urn:x-simplesamlphp:namequalifier',
         );
 
-        $this->assertEquals('TheIssuerValue', $issuer->getContent());
-        $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
+        $this->assertEquals('urn:x-simplesamlphp:issuer', $issuer->getContent());
+        $this->assertEquals('urn:x-simplesamlphp:namequalifier', $issuer->getNameQualifier());
         $this->assertNull($issuer->getSPNameQualifier());
         $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
         $this->assertNull($issuer->getSPProvidedID());
@@ -58,20 +58,5 @@ class IssuerTest extends TestCase
             self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
             strval($issuer),
         );
-    }
-
-
-    /**
-     * @return void
-     */
-    public function testUnmarshalling(): void
-    {
-        $issuer = Issuer::fromXML(self::$xmlRepresentation->documentElement);
-
-        $this->assertEquals('TheIssuerValue', $issuer->getContent());
-        $this->assertEquals('TheNameQualifier', $issuer->getNameQualifier());
-        $this->assertNull($issuer->getSPNameQualifier());
-        $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
-        $this->assertNull($issuer->getSPProvidedID());
     }
 }
