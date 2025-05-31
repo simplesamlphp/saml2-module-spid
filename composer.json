@@ -16,13 +16,13 @@
         "php": "^8.1",
         "ext-dom": "*",
 
-        "simplesamlphp/assert": "^1.0",
-        "simplesamlphp/saml2": "^5.0.0-alpha.12",
-        "simplesamlphp/xml-common": "^1.12"
+        "simplesamlphp/assert": "~1.8.1",
+        "simplesamlphp/saml2": "~5.0.0",
+        "simplesamlphp/xml-common": "~1.24.2"
     },
     "require-dev": {
-        "mockery/mockery": "^1.6",
-        "simplesamlphp/simplesamlphp-test-framework": "^1.5"
+        "mockery/mockery": "~1.6.12",
+        "simplesamlphp/simplesamlphp-test-framework": "~1.9.2"
     },
     "autoload": {
         "psr-4": {
