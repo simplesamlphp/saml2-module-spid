@@ -18,7 +18,7 @@
 
         "simplesamlphp/assert": "~1.8.1",
         "simplesamlphp/saml2": "~5.0.0",
-        "simplesamlphp/xml-common": "~1.25.0"
+        "simplesamlphp/xml-common": "~1.26.0"
     },
     "require-dev": {
         "mockery/mockery": "~1.6.12",
