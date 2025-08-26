@@ -22,7 +22,7 @@
     },
     "require-dev": {
         "mockery/mockery": "~1.6.12",
-        "simplesamlphp/simplesamlphp-test-framework": "~1.9.2"
+        "simplesamlphp/simplesamlphp-test-framework": "~1.10.0"
     },
     "autoload": {
         "psr-4": {
