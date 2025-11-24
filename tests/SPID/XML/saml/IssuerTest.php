@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use SimpleSAML\SAML2\Constants;
+use SimpleSAML\SAML2\Type\SAMLStringValue;
 use SimpleSAML\SPID\XML\saml\Issuer;
 use SimpleSAML\XML\DOMDocumentFactory;
 use SimpleSAML\XML\TestUtils\SerializableElementTestTrait;
@@ -44,14 +45,14 @@ class IssuerTest extends TestCase
     public function testMarshalling(): void
     {
         $issuer = new Issuer(
-            'urn:x-simplesamlphp:issuer',
-            'urn:x-simplesamlphp:namequalifier',
+            SAMLStringValue::fromString('urn:x-simplesamlphp:issuer'),
+            SAMLStringValue::fromString('urn:x-simplesamlphp:namequalifier'),
         );
 
-        $this->assertEquals('urn:x-simplesamlphp:issuer', $issuer->getContent());
-        $this->assertEquals('urn:x-simplesamlphp:namequalifier', $issuer->getNameQualifier());
+        $this->assertEquals('urn:x-simplesamlphp:issuer', $issuer->getContent()->getValue());
+        $this->assertEquals('urn:x-simplesamlphp:namequalifier', $issuer->getNameQualifier()->getValue());
         $this->assertNull($issuer->getSPNameQualifier());
-        $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat());
+        $this->assertEquals(Constants::NAMEID_ENTITY, $issuer->getFormat()->getValue());
         $this->assertNull($issuer->getSPProvidedID());
 
         $this->assertEquals(
