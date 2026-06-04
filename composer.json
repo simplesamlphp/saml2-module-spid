@@ -13,12 +13,12 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.5",
         "ext-dom": "*",
 
         "simplesamlphp/assert": "~2.0",
-        "simplesamlphp/saml2": "~6.1",
-        "simplesamlphp/xml-common": "~2.8"
+        "simplesamlphp/saml2": "dev-feature/dom-migration-php84",
+        "simplesamlphp/xml-common": "dev-feature/dom-migration-php84"
     },
     "require-dev": {
         "simplesamlphp/simplesamlphp-test-framework": "~1.11"
@@ -31,6 +31,11 @@
     "autoload-dev": {
         "psr-4": {
             "SimpleSAML\\SPID\\": "tests/SPID/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "v2.0.x-dev"
         }
     },
     "config": {
