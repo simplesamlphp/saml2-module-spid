@@ -21,7 +21,7 @@
         "simplesamlphp/xml-common": "dev-feature/dom-migration-php84"
     },
     "require-dev": {
-        "simplesamlphp/simplesamlphp-test-framework": "~1.11"
+        "simplesamlphp/simplesamlphp-test-framework": "~2.0"
     },
     "autoload": {
         "psr-4": {
