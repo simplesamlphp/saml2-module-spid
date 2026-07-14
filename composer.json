@@ -16,9 +16,9 @@
         "php": "^8.5",
         "ext-dom": "*",
 
-        "simplesamlphp/assert": "~2.0",
-        "simplesamlphp/saml2": "dev-feature/dom-migration-php84",
-        "simplesamlphp/xml-common": "dev-feature/dom-migration-php84"
+        "simplesamlphp/assert": "~3.0",
+        "simplesamlphp/saml2": "~7.0",
+        "simplesamlphp/xml-common": "~3.0"
     },
     "require-dev": {
         "simplesamlphp/simplesamlphp-test-framework": "~2.0"
