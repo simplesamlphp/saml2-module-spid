@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SimpleSAML\SPID\XML\saml;
 
-use DOMElement;
+use Dom;
 use SimpleSAML\Assert\Assert;
 use SimpleSAML\SAML2\Constants as C;
 use SimpleSAML\SAML2\Type\SAMLAnyURIValue;
@@ -36,12 +36,12 @@ final class Issuer extends NameIDType
     /**
      * Convert XML into an Issuer
      *
-     * @param \DOMElement $xml The XML element we should load
+     * @param \Dom\Element $xml The XML element we should load
      *
      * @return static
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      */
-    public static function fromXML(DOMElement $xml): static
+    public static function fromXML(Dom\Element $xml): static
     {
         Assert::same($xml->localName, 'Issuer', InvalidDOMElementException::class);
         Assert::same($xml->namespaceURI, Issuer::NS, InvalidDOMElementException::class);
